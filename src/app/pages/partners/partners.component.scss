@@ -1,0 +1,244 @@
+.part {
+    background-image: url("/assets/images/fonpart.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: -70px;
+    // margin-top: -5px; 
+}
+
+.maintext {
+    font-size: 40px;
+}
+
+.undermaintext {
+    font-size: 20px;
+}
+
+.part-btn {
+    display: inline-block;
+    // margin-top: 30px;
+    // left: 50%;
+    // transform: translateX(-50%) scale(1.2);
+    position: relative;
+    background: rgba(82, 0, 217, 1);
+    color: white;
+    font-size: 18px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.part-btn:hover {
+    background-color: darkviolet;
+}
+
+.part a{
+    text-decoration: underline;
+}
+
+.offers {
+    text-align: center;
+    padding: 80px 40px;
+    background: white;
+}
+
+.offers-title {
+    margin-bottom: 50px;
+
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.offer {
+    text-align: center;
+    // max-width: 400px;
+    p {
+
+        color: #666; 
+
+    }
+    h3{
+        // width: 100px;
+        text-wrap: balance;
+        
+    }
+}
+
+.how-it-works {
+    background-color: rgba(215, 229, 255, 1); 
+    padding: 40px 0; 
+}
+
+
+.how-it-works__content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 40px; 
+}
+
+.how-it-works__text {
+    flex: 1;
+}
+
+.how-it-works__title {
+    text-align: center;
+    font-size: 36px; 
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 70px; 
+}
+
+.how-it-works__list {
+    list-style: none; 
+    padding: 0;
+}
+
+.how-it-works__list li {
+    display: flex;
+    align-items: center; 
+    font-size: 18px; 
+    color: #333;
+    margin-bottom: 30px; 
+}
+
+.how-it-works__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; 
+    height: 80px; 
+    background-color: transparent; 
+    border: 2px solid #a78bfa; 
+    border-radius: 50%; 
+    color: #a78bfa; 
+    font-size: 36px;
+    font-weight: bold;
+    margin-right: 20px; 
+}
+
+.how-it-works__image {
+    flex: 2; 
+    max-width: 50%; 
+    text-align: right; 
+}
+
+.how-it-works__image img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.vidjet {
+    background-color: white;
+    p{
+        letter-spacing: 0.1em;
+        margin: 50px 20px;
+        text-align: center;
+        color: #666;
+    }
+}
+
+.vidjetimg{
+    text-align: center;
+}
+
+.vidjet__title {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.vidjetimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+/* Стилі для візитної картки */
+.insurance-card {
+    background: linear-gradient(135deg, #ffffff, #e8e6f5);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease;
+    margin-bottom: 100px;
+}
+
+.insurance-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Стилі для заголовка картки */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.card-header h3 {
+    font-size: 20px;
+    color: #44238b;
+    margin: 0;
+}
+
+
+.card-slogan {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+
+.card-info {
+    font-size: 14px;
+    color: #333;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.card-info p {
+    margin: 5px 0;
+}
+
+
+.card-button {
+    display: inline-block;
+    background-color: #44238b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #5b3db5;
+}

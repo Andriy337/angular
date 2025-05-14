@@ -1,0 +1,142 @@
+.reviews {
+  padding: 100px 0;
+  background-color: #f9f9f9;
+}
+
+.h3b {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.review-form {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.rating-input {
+  display: inline-flex;
+}
+
+.star {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #666;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.review-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.review-card {
+  background-color: #e6e0fa;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.rating-date-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rating {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.star {
+  color: #ccc;
+  font-size: 20px;
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.review-date {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  margin-left: auto;
+}
+
+.review-comment {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.review-author {
+  font-size: 14px;
+  font-style: italic;
+  color: #333;
+}
+
+.delete-btn {
+  background-color: #ff4444;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

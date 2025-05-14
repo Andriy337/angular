@@ -1,0 +1,58 @@
+<section class="login">
+    <div class="container">
+      <h2>Вхід</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Ви входите як:</label>
+          <div class="user-type">
+            <label>
+              <input type="radio" formControlName="userType" value="person" checked>
+              Людина
+            </label>
+            <label>
+              <input type="radio" formControlName="userType" value="company">
+              Компанія
+            </label>
+          </div>
+        </div>
+  
+        <div *ngIf="userType === 'person'">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email">
+            <div *ngIf="email?.invalid && email?.touched" class="error">
+              <span *ngIf="email?.errors?.['required']">Email обов'язковий</span>
+              <span *ngIf="email?.errors?.['email']">Невалідний email</span>
+            </div>
+          </div>
+        </div>
+  
+        <div *ngIf="userType === 'company'">
+          <div class="form-group">
+            <label for="companyEmail">Email компанії:</label>
+            <input type="email" id="companyEmail" formControlName="companyEmail">
+            <div *ngIf="companyEmail?.invalid && companyEmail?.touched" class="error">
+              <span *ngIf="companyEmail?.errors?.['required']">Email обов'язковий</span>
+              <span *ngIf="companyEmail?.errors?.['email']">Невалідний email</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" formControlName="password">
+          <div *ngIf="password?.invalid && password?.touched" class="error">
+            <span *ngIf="password?.errors?.['required']">Пароль обов'язковий</span>
+            <span *ngIf="password?.errors?.['minlength']">Мінімум 6 символів</span>
+          </div>
+        </div>
+  
+        <div *ngIf="errorMessage" class="error">
+          <span>{{ errorMessage }}</span>
+        </div>
+  
+        <button type="submit" [disabled]="loginForm.invalid">Увійти</button>
+      </form>
+      <p>Немає акаунта? <a [routerLink]="['/register']">Зареєструйтесь</a></p>
+    </div>
+  </section>

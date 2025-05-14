@@ -1,0 +1,271 @@
+.search {
+    background-image: url("/assets/images/fon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: -70px;
+}
+
+.search .container {
+    width: 800px;
+    margin-top: -70px;
+    position: relative; /* Додаємо, щоб кнопка позиціонувалася відносно .container */
+}
+
+.maintext {
+    margin-bottom: 0;
+    font-size: 40px;
+    padding: 0 auto;
+    text-align: center;
+}
+
+.undermaintext {
+    font-size: 28px;
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 14px;
+}
+
+.select-country,
+.date-input,
+.select-people {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: black;
+    width: auto;
+    min-width: 180px;
+}
+
+.search-btn {
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: rgba(82, 0, 217, 1);
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s;
+    top: calc(100% + 20px); /* Розташовуємо кнопку нижче форми */
+}
+
+.search-btn:hover {
+    background-color: darkviolet;
+}
+.infocards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+}
+
+
+.infocards:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+
+.infotext {
+    display: flex;
+    flex-direction: column;
+    width: 502px;
+    height: 227px;
+    justify-content: flex-start; 
+}
+
+
+.info h4 {
+    font-size: 24px;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 30px; 
+}
+
+
+.info p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0; 
+}
+
+
+.imagebox {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagebox img {
+    max-width: 100%;
+    height: auto;
+}
+
+.buy {
+    padding: 50px 0;
+    text-align: center;
+   
+}
+
+.h3b {
+
+    padding: 5%;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.step {
+    flex: 1;
+    background-color: #e6e1f5;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.step-number {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-size: 48px;
+    opacity: 0.5;
+    color: #6b5b95;
+    font-weight: bold;
+}
+
+.step-icon {
+    margin: 20px 0;
+}
+
+.step-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.step-description {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.reviews {
+    margin-top: -50px;
+}
+
+.h3b {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 1060px; 
+    margin: 0 auto;
+    padding: 0; 
+}
+
+.review-cards {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: max-content; 
+}
+
+.review-card {
+    background-color: #e6e0fa;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rating-date-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.star {
+    color: #ccc;
+    font-size: 20px;
+}
+
+.star.filled {
+    color: #ffd700;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    margin-left: auto;
+}
+
+.review-comment {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-size: 14px;
+    font-style: italic;
+    color: #333;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #666;
+}

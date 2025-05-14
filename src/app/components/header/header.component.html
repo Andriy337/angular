@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/Vector.png" alt="logo">
+      </div>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li><a [routerLink]="['/']">Страхування</a></li>
+          <li><a [routerLink]="['/reviews']">Відгуки</a></li>
+          <li><a [routerLink]="['/partners']">Партнерам</a></li>
+        </ul>
+      </nav>
+      <div class="user-section">
+        <a *ngIf="!isLoggedIn" [routerLink]="['/login']" class="btn">
+          <img src="assets/images/mail.png" alt="icon">
+          Увійти
+        </a>
+        <div *ngIf="isLoggedIn" class="user-menu" [class.show]="showDropdown">
+          <span class="username" (click)="toggleDropdown()">
+            {{ getUserName() }}
+          </span>
+          <div class="dropdown-content">
+            <a [routerLink]="['/profile']">Ваші дані</a>
+            <a class="logout-link" (click)="logout()">Вийти</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

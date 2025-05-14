@@ -1,0 +1,144 @@
+
+
+.container {
+  padding: 70px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.parameters, .result, .insured-persons-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.parameters {
+  text-align: center;
+}
+
+.parameters h3, .result h3, .insured-persons-form h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.parameters p, .result p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.parameters ul, .result ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.parameters ul li, .result ul li {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.insured-person {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.insured-person h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group label {
+  flex: 0 0 100px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input[type="date"] {
+  padding: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.discount-message {
+  color: green;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+}
+
+.back-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.submit-btn, .checkout-btn, .edit-btn {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.submit-btn:hover:not(:disabled), .checkout-btn:hover, .edit-btn:hover {
+  background-color: #3700b3;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Відстань між кнопками */
+  margin-top: 20px;
+}

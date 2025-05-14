@@ -1,0 +1,130 @@
+<section class="search">
+    <div class="container">
+        <h1 class="maintext">Страхування для мандрівників</h1>
+        <p class="undermaintext">Поліс, який дійсно працює</p>
+        
+        <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()">
+            <div class="search-form">
+                <select formControlName="selectedCountry" class="select-country" required>
+                    <option value="" disabled selected>Оберіть країну</option>
+                    <option value="Австралія">Австралія</option>
+                    <option value="Австрія">Австрія</option>
+                    <option value="Алжир">Алжир</option>
+                    <option value="Абхазія">Абхазія</option>
+                    <option value="США">США</option>
+                </select>
+                
+                <input type="date" formControlName="startDate" class="date-input" required>
+                <input type="date" formControlName="endDate" class="date-input" required>
+
+                <select formControlName="numberOfPeople" class="select-people" required>
+                    <option value="" disabled selected>Кількість людей</option>
+                    <option *ngFor="let num of [1, 2, 3, 4]" [value]="num">{{ num }} {{ num === 1 ? 'людина' : 'людини' }}</option>
+                </select>
+            </div>
+
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+
+            <button type="submit" class="search-btn" [disabled]="insuranceForm.invalid">Дізнатись вартість</button>
+        </form>
+    </div>
+</section>
+<section class="info">
+    <div class="container">
+        <div class="infocards">
+            <div class="imagebox">
+                <img src="/assets/images/doctor.png" alt="" class="infoimg">
+            </div>
+            <div class="infotext">
+                <h4 class="corona">Покриваємо коронавірус</h4>
+                <p class="coronap">Всі наші поліси покривають лікування та діагностику у разі зараження COVID-19, адже не всі країни готові лікувати коронавірус власним коштом. Максимальне покриття за медичними витратами становитиме 100 000 USD/EUR. Також полісом передбачена компенсація щодо ризику скасування поїздки, якщо застрахований захворіє на COVID-19.</p>
+            </div>
+        </div>
+        <div class="infocards">
+            <div class="imagebox">
+                <img src="/assets/images/doctor2.png" alt="" class="infoimg2">
+            </div>
+            <div class="infotext">
+                <h4 class="cold">Допомога при загостренні хронічних захворювань</h4>
+                <p class="coldp">Сьогодні навіть у людей молодше 30 років є хронічні захворювання, які іноді дають себе знати. Не кажучи вже про людей похилого віку - для них допомога при загостренні хронічних захворювань особливо важлива. Тому ми пропонуємо одне з найбільших покриттів на ринку з усунення загострень хронічних захворювань - до 3 000 $.</p>
+            </div>
+        </div>
+        <div class="infocards">
+            <div class="imagebox">
+                <img src="/assets/images/doctor3.png" alt="" class="infoimg3">
+            </div>
+            <div class="infotext">
+                <h4 class="onlinedoc">Лікар онлайн 24/7</h4>
+                <p class="onlinedocp">Щоб не витрачати час на дорогу до клініки та очікування лікаря, наші клієнти можуть безкоштовно отримати онлайн-консультацію терапевта чи педіатра у додатку на смартфоні. Ця опція включена до всіх страховок незалежно від тарифу. Лікар відповідає відразу ж 24/7 у відео-або онлайн-чаті. Потрібно лише встановити наш додаток</p>
+            </div>
+        </div>
+        <div class="infocards">
+            <div class="imagebox">
+                <img src="/assets/images/doctor4.png" alt="" class="infoimg4">
+            </div>
+            <div class="infotext">
+                <h4 class="bestclinic">Тільки перевірені клініки</h4>
+                <p class="bestclinicp">Ми контролюємо якість роботи медичних закладів за допомогою Ваших рейтингів та відгуків на нашому сайті. Якщо ми отримуємо більше 2 негативних відгуків по клініці, то просто перестаємо з нею працювати. Таким чином, наших клієнтів направляють лише до перевірених клінік, де швидко надають кваліфіковану медичну допомогу.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="buy">
+    <div class="container">
+        <h3 class="h3b">Як придбати поліс?</h3>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <img src="/assets/images/calc.png" alt="Калькулятор">
+                </div>
+                <p class="step-description">Розрахуйте онлайн вартість поліса</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <img src="/assets/images/group.png" alt="Анкета">
+                </div>
+                <p class="step-description">Введіть дані про вашу поїздку</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <img src="/assets/images/cash.png" alt="Гаманець">
+                </div>
+                <p class="step-description">Оплатіть поліс онлайн</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <img src="/assets/images/print.png" alt="Email">
+                </div>
+                <p class="step-description">Отримайте поліс на e-mail і роздрукуйте</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="reviews">
+    <div class="container">
+        <h3 class="h3b">Відгуки</h3>
+        <div class="carousel-container">
+            <div class="review-cards" [style.transform]="getTransformStyle()">
+                <div *ngFor="let review of reviews" class="review-card">
+                    <div class="rating-date-row">
+                        <div class="rating">
+                            <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" [class.filled]="star <= review.rating">★</span>
+                        </div>
+                        <p class="review-date">{{ review.date | date: 'dd/MM/yyyy' }}</p>
+                    </div>
+                    <p class="review-comment">{{ review.comment }}</p>
+                    <p class="review-author">{{ review.author }}</p>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span *ngFor="let i of getDotsArray()" class="dot" [class.active]="currentIndex === i" (click)="setCurrentIndex(i)"></span>
+            </div>
+        </div>
+    </div>
+</section>

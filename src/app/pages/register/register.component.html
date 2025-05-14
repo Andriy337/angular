@@ -1,0 +1,100 @@
+<div class="register">
+  <div class="register-container">
+    <h2>Реєстрація</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="userType">Тип користувача:</label>
+        <select id="userType" formControlName="userType">
+          <option value="person">Фізична особа</option>
+          <option value="company">Компанія</option>
+        </select>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="userType === 'person'">
+        <div class="form-group">
+          <label for="username">Ім'я користувача:</label>
+          <input id="username" formControlName="username" type="text" placeholder="Введіть ім'я">
+          <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="error">
+            <div *ngIf="username?.errors?.['required']">Ім'я обов'язкове</div>
+            <div *ngIf="username?.errors?.['minlength']">Ім'я має бути не коротше 3 символів</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" formControlName="email" type="email" placeholder="Введіть email">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error">
+            <div *ngIf="email?.errors?.['required']">Email обов'язковий</div>
+            <div *ngIf="email?.errors?.['email']">Введіть коректний email</div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="userType === 'company'">
+        <div class="form-group">
+          <label for="companyName">Назва компанії:</label>
+          <input id="companyName" formControlName="companyName" type="text" placeholder="Введіть назву компанії">
+          <div *ngIf="companyName?.invalid && (companyName?.dirty || companyName?.touched)" class="error">
+            <div *ngIf="companyName?.errors?.['required']">Назва компанії обов'язкова</div>
+            <div *ngIf="companyName?.errors?.['minlength']">Назва має бути не коротше 3 символів</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contactPerson">Контактна особа:</label>
+          <input id="contactPerson" formControlName="contactPerson" type="text" placeholder="Введіть ім'я контактної особи">
+          <div *ngIf="contactPerson?.invalid && (contactPerson?.dirty || contactPerson?.touched)" class="error">
+            <div *ngIf="contactPerson?.errors?.['required']">Контактна особа обов'язкова</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="companyEmail">Email компанії:</label>
+          <input id="companyEmail" formControlName="companyEmail" type="email" placeholder="Введіть email компанії">
+          <div *ngIf="companyEmail?.invalid && (companyEmail?.dirty || companyEmail?.touched)" class="error">
+            <div *ngIf="companyEmail?.errors?.['required']">Email компанії обов'язковий</div>
+            <div *ngIf="companyEmail?.errors?.['email']">Введіть коректний email</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон:</label>
+          <input id="phone" formControlName="phone" type="text" placeholder="Введіть номер телефону">
+          <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="error">
+            <div *ngIf="phone?.errors?.['required']">Телефон обов'язковий</div>
+            <div *ngIf="phone?.errors?.['pattern']">Введіть коректний номер телефону</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Пароль:</label>
+        <input id="password" formControlName="password" type="password" placeholder="Введіть пароль">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+          <div *ngIf="password?.errors?.['required']">Пароль обов'язковий</div>
+          <div *ngIf="password?.errors?.['minlength']">Пароль має бути не коротше 6 символів</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Підтвердження пароля:</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Підтвердіть пароль">
+        <div *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)" class="error">
+          <div *ngIf="confirmPassword?.errors?.['required']">Підтвердження пароля обов'язкове</div>
+        </div>
+        <div *ngIf="registerForm.errors?.['mismatch'] && (confirmPassword?.dirty || confirmPassword?.touched)" class="error">
+          Паролі не співпадають
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="registerForm.invalid">Зареєструватись</button>
+    </form>
+
+    <p>Вже маєте акаунт? <a [routerLink]="['/login']">Увійти</a></p>
+  </div>
+</div>

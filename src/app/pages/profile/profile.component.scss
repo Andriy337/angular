@@ -1,0 +1,89 @@
+.profile-container {
+  padding: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.profile-container > div {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.no-insurances, .insurances {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.insurances h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.insurance-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.insurance-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.insurance-item p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.insurance-item ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.insurance-item ul li {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.discount-message {
+  color: green;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.document {
+  white-space: pre-wrap;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.back-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

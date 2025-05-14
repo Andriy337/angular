@@ -1,0 +1,53 @@
+<div class="profile-container">
+  <h2>Ваш профіль</h2>
+
+  <div *ngIf="currentUser; else notLoggedIn">
+    <!-- Для звичайного користувача (User) -->
+    <div *ngIf="isUser(currentUser)">
+      <p><strong>Ім'я користувача:</strong> {{ currentUser.username }}</p>
+      <p><strong>Email:</strong> {{ currentUser.email }}</p>
+    </div>
+
+    <!-- Для партнера (Partner) -->
+    <div *ngIf="isPartner(currentUser)">
+      <p><strong>Назва компанії:</strong> {{ currentUser.companyName }}</p>
+      <p><strong>Контактна особа:</strong> {{ currentUser.contactPerson }}</p>
+      <p><strong>Email компанії:</strong> {{ currentUser.companyEmail }}</p>
+      <p><strong>Телефон:</strong> {{ currentUser.phone }}</p>
+    </div>
+
+    <!-- Відображення страхових полісів -->
+    <div class="insurances" *ngIf="insurances.length > 0">
+      <h3>Ваші страхові поліси</h3>
+      <div *ngFor="let insurance of insurances; let i = index" class="insurance-item">
+        <h4>Поліс №{{ insurance.policyNumber }}</h4>
+        <p><strong>Замовник страхування:</strong> {{ insurance.insuredName }}</p>
+        <p><strong>Країна:</strong> {{ insurance.country }}</p>
+        <p><strong>Період:</strong> {{ insurance.startDate }} - {{ insurance.endDate }} ({{ insurance.days }} дні)</p>
+        <p><strong>Кількість осіб:</strong> {{ insurance.numberOfPeople }}</p>
+        <p><strong>Застраховані особи:</strong></p>
+        <ul>
+          <li *ngFor="let person of insurance.insuredPersons; let j = index">
+            {{ j + 1 }}. {{ person.lastName }} {{ person.firstName }} {{ person.middleName }} 
+             {{ person.birthDate }}
+          </li>
+        </ul>
+        <p><strong>Вартість:</strong> ${{ insurance.cost }}</p>
+        <p *ngIf="insurance.discountApplied" class="discount-message">
+          Знижка 25% застосована для компанії!
+        </p>
+        <h4>Документ страхування</h4>
+        <pre class="document">{{ insurance.document }}</pre>
+      </div>
+    </div>
+
+    <div *ngIf="insurances.length === 0" class="no-insurances">
+      <p>У вас ще немає оформлених страхових полісів.</p>
+      <a [routerLink]="['/']" class="back-link">Оформити страхування</a>
+    </div>
+  </div>
+
+  <ng-template #notLoggedIn>
+    <p>Ви не авторизовані. Будь ласка, <a [routerLink]="['/login']">увійдіть</a>.</p>
+  </ng-template>
+</div>

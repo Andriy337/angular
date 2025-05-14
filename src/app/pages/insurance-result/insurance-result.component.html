@@ -1,0 +1,85 @@
+<section class="insurance-result">
+    <div class="container">
+        <h2>Результати страхування</h2>
+
+        <div class="parameters">
+            <h3>Ваші дані</h3>
+            <p><strong>Страховий поліс:</strong> №{{ '12345' }}</p>
+            <p><strong>Замовник страхування:</strong> {{ insuredName }}</p>
+            <p><strong>Країна:</strong> {{ selectedCountry || '–' }}</p>
+            <p><strong>Період страхування:</strong> {{ startDate || '–' }} - {{ endDate || '–' }} {{ days ? '(' + days + ' дні)' : '' }}</p>
+            <p><strong>Кількість застрахованих осіб:</strong> {{ numberOfPeople || 0 }}</p>
+        </div>
+
+        <div *ngIf="errorMessage" class="error-message">
+            <p>{{ errorMessage }}</p>
+            <a [routerLink]="['/']" class="back-link">Повернутися на головну</a>
+        </div>
+
+        <div *ngIf="!errorMessage && !isFormSubmitted" class="insured-persons-form">
+            <h3>Введіть дані застрахованих осіб</h3>
+            <form [formGroup]="insuredPersonsForm" (ngSubmit)="onSubmitInsuredPersons()">
+                <div formArrayName="insuredPersons">
+                    <div *ngFor="let person of insuredPersons.controls; let i = index" [formGroupName]="i" class="insured-person">
+                        <h4>Застрахована особа {{ i + 1 }}</h4>
+                        <div class="form-group">
+                            <label>Прізвище:</label>
+                            <input type="text" formControlName="lastName" placeholder="Прізвище" required>
+                            <div *ngIf="person.get('lastName')?.invalid && (person.get('lastName')?.dirty || person.get('lastName')?.touched)" class="error">
+                                <div *ngIf="person.get('lastName')?.errors?.['required']">Прізвище обов'язкове</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Ім'я:</label>
+                            <input type="text" formControlName="firstName" placeholder="Ім'я" required>
+                            <div *ngIf="person.get('firstName')?.invalid && (person.get('firstName')?.dirty || person.get('firstName')?.touched)" class="error">
+                                <div *ngIf="person.get('firstName')?.errors?.['required']">Ім'я обов'язкове</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>По батькові:</label>
+                            <input type="text" formControlName="middleName" placeholder="По батькові" required>
+                            <div *ngIf="person.get('middleName')?.invalid && (person.get('middleName')?.dirty || person.get('middleName')?.touched)" class="error">
+                                <div *ngIf="person.get('middleName')?.errors?.['required']">По батькові обов'язкове</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Дата народження:</label>
+                            <input type="date" formControlName="birthDate" required>
+                            <div *ngIf="person.get('birthDate')?.invalid && (person.get('birthDate')?.dirty || person.get('birthDate')?.touched)" class="error">
+                                <div *ngIf="person.get('birthDate')?.errors?.['required']">Дата народження обов'язкова</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn" [disabled]="insuredPersonsForm.invalid">Підтвердити</button>
+            </form>
+        </div>
+
+        <div *ngIf="!errorMessage && isFormSubmitted" class="result">
+            <h3>Дані застрахованих осіб</h3>
+            <ul>
+                <li *ngFor="let person of insuredPersons.value">
+                    {{ person.lastName }} {{ person.firstName }} {{ person.middleName }} -- {{ person.birthDate }}
+                </li>
+            </ul>
+
+            <h3>Політика страхування</h3>
+            <ul>
+                <li>Медичні витрати: до 100 000 USD/EUR</li>
+                <li>Лікування COVID-19: включено</li>
+                <li>Скасування поїздки: до 5 000 USD</li>
+                <li>Онлайн-консультація лікаря: 24/7</li>
+            </ul>
+            <p *ngIf="discountApplied" class="discount-message">
+                Знижка 25% застосована для компанії!
+            </p>
+            <p><strong>Вартість:</strong> ${{ costResult }}</p>
+            <div class="button-group">
+                <button class="edit-btn" (click)="editInsuredPersons()">Редагувати дані</button>
+                <button class="checkout-btn" (click)="proceedToCheckout()">Перейти до оформлення</button>
+                
+            </div>
+        </div>
+    </div>
+</section>
